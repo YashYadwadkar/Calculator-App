@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #main {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(62, 60, 60);
+        }
+        
+        input {
+            width: 20%;
+            height: 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            margin: 6px;
+        }
+        
+        #display {
+            width: 94%;
+            height: 50px;
+            background-color: darkgrey;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <form name="f" action="">
+            <input id="display" type="text" name="abc" placeholder="0">
+            <br>
+            <input type="button" value="1" onclick="f.abc.value+=1">
+            <input type="button" value="2" onclick="f.abc.value+=2">
+            <input type="button" value="3" onclick="f.abc.value+=3">
+            <input type="button" value="+" onclick="add()">
+
+            <br>
+            <input type="button" value="4" onclick="f.abc.value+=5">
+            <input type="button" value="5" onclick="f.abc.value+=5">
+            <input type="button" value="6" onclick="f.abc.value+=6">
+            <input type="button" value="-" onclick="sub()">
+
+            <br>
+            <input type="button" value="7" onclick="f.abc.value+=7">
+            <input type="button" value="8" onclick="f.abc.value+=8">
+            <input type="button" value="9" onclick="f.abc.value+=9">
+            <input type="button" value="x" onclick="mul()">
+
+            <br>
+            <input type="button" value="c" onclick="f.abc.value=''">
+            <input type="button" value="0" onclick="f.abc.value+=0">
+            <input type="button" value="=" onclick="f.abc.value=eval(f.abc.value)">
+            <input type="button" value="/" onclick="div()">
+
+
+        </form>
+
+    </div>
+
+    <script>
+        function add() {
+            let a = 0,
+                b = 0;
+            a = f.abc.value;
+            b = a.charAt(a.length - 1);
+            if (b == '+' || b == '-' || b == '*' || b == '/') {
+                f.abc.value = a.substring(0, a.length - 1);
+                f.abc.value += '+';
+            } else {
+                f.abc.value += '+';
+            }
+        }
+
+        function div() {
+            let a = 0,
+                b = 0;
+            a = f.abc.value;
+            b = a.charAt(a.length - 1);
+            if (b == '+' || b == '-' || b == '*' || b == '/') {
+                f.abc.value = a.substring(0, a.length - 1);
+                f.abc.value += '/';
+            } else {
+                f.abc.value += '/';
+            }
+        }
+
+        function sub() {
+            let a = 0,
+                b = 0;
+            a = f.abc.value;
+            b = a.charAt(a.length - 1);
+            if (b == '+' || b == '-' || b == '*' || b == '/') {
+                f.abc.value = a.substring(0, a.length - 1);
+                f.abc.value += '-';
+            } else {
+                f.abc.value += '-';
+            }
+        }
+
+        function mul() {
+            let a = 0,
+                b = 0;
+            a = f.abc.value;
+            b = a.charAt(a.length - 1);
+            if (b == '+' || b == '-' || b == '*' || b == '/') {
+                f.abc.value = a.substring(0, a.length - 1);
+                f.abc.value += '*';
+            } else {
+                f.abc.value += '*';
+            }
+        }
+    </script>
+</body>
+
+</html>
